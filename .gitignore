@@ -1,0 +1,15 @@
+# Salesforce CLI and org auth (never commit these)
+.sf/
+.sfdx/
+.localdevserver/
+*.key
+*.pem
+.env
+.env.*
+
+# Logs and caches
+*.log
+node_modules/
+.DS_Store
+.vscode/
+.idea/

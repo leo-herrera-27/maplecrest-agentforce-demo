@@ -1,0 +1,21 @@
+Order_Number__c,Customer_Email__c,Customer_Name__c,Brand__c,Status__c,Carrier__c,Tracking_Number__c,Order_Date__c,Estimated_Delivery__c,Order_Total__c,Items__c,Status_Note__c
+MRG-100245,ava.tremblay@example.com,Ava Tremblay,Maplecrest Auto,Delivered,UPS,UP1207388624CA,2026-11-16,2026-11-19,139.99,AllRoad Touring All-Season Tire 205/55R16,
+MRG-100246,liam.martin@example.com,Liam Martin,Boreal Sport,Shipped,UPS,UP1922121676CA,2026-11-22,2026-11-24,349.99,Kestrel 3-Person Backpacking Tent,
+MRG-100247,olivia.roy@example.com,Olivia Roy,Ironpine Workwear,Shipped,Canada Post,CA9979544025CA,2026-11-21,2026-11-27,179.99,Ironpine Insulated Bib Overall,
+MRG-100248,noah.wilson@example.com,Noah Wilson,Maplecrest Auto,Processing,,,2026-11-21,2026-11-28,79.99,"StopRight Ceramic Brake Pads, Front",
+MRG-100249,emma.gagnon@example.com,Emma Gagnon,Boreal Sport,Ready for Pickup,,,2026-11-22,,649.98,Arctic Down Sleeping Bag -15 C; Kestrel 3-Person Backpacking Tent,
+MRG-100250,lucas.smith@example.com,Lucas Smith,Ironpine Workwear,Delayed,Canada Post,CA9790005680CA,2026-11-22,2026-11-29,219.98,Ironpine Merino Work Sock 3-Pack; Ironpine Insulated Bib Overall,Weather delay at the regional sort facility
+MRG-100251,chloe.bouchard@example.com,Chloe Bouchard,Maplecrest Auto,Cancelled,,,2026-11-20,,42.99,ProSeries 5W-30 Full Synthetic Motor Oil 5 L,Customer requested cancellation
+MRG-100252,ethan.brown@example.com,Ethan Brown,Boreal Sport,Delivered,UPS,UP1776213899CA,2026-11-18,2026-11-22,529.98,Glide X5 Junior Hockey Skate; Kestrel 3-Person Backpacking Tent,
+MRG-100253,mia.singh@example.com,Mia Singh,Ironpine Workwear,Shipped,UPS,UP9859611191CA,2026-11-14,2026-11-24,279.99,Ironpine Frostline Insulated Safety Boot,
+MRG-100254,jacob.lee@example.com,Jacob Lee,Maplecrest Auto,Processing,,,2026-11-12,2026-11-30,274.98,AllWeather Trek Tire 235/65R17; ProSeries 0W-20 Full Synthetic Motor Oil 5 L,
+MRG-100255,sofia.chen@example.com,Sofia Chen,Boreal Sport,Delivered,Purolator,PU6847951704CA,2026-11-13,2026-11-17,1099.99,Ridgeline 29 Hardtail Mountain Bike,
+MRG-100256,owen.taylor@example.com,Owen Taylor,Ironpine Workwear,Shipped,UPS,UP7222695482CA,2026-11-21,2026-11-24,249.99,Ironpine Hi-Vis Insulated Parka,
+MRG-100257,zoe.pelletier@example.com,Zoe Pelletier,Maplecrest Auto,Shipped,Canada Post,CA8546862847CA,2026-11-16,2026-11-25,29.99,ClearView Winter Wiper Blade 22 in,
+MRG-100258,nathan.campbell@example.com,Nathan Campbell,Boreal Sport,Processing,,,2026-11-22,2026-11-27,189.99,"WinterGrip Trail Shoe, Waterproof",
+MRG-100259,leah.nguyen@example.com,Leah Nguyen,Ironpine Workwear,Ready for Pickup,,,2026-11-17,,129.98,Ironpine Merino Work Sock 3-Pack; Ironpine Flex Work Pant,
+MRG-100260,samuel.patel@example.com,Samuel Patel,Maplecrest Auto,Delayed,Purolator,PU6454347649CA,2026-11-15,2026-11-28,369.98,"PowerCell Platinum AGM Battery Group H6; StopRight Ceramic Brake Pads, Front",Weather delay at the regional sort facility
+MRG-100261,isla.morin@example.com,Isla Morin,Boreal Sport,Cancelled,,,2026-11-11,,649.99,Powder 96 All-Mountain Ski,Customer requested cancellation
+MRG-100262,gabriel.clark@example.com,Gabriel Clark,Ironpine Workwear,Delivered,Purolator,PU8166808862CA,2026-11-12,2026-11-15,39.99,Ironpine Merino Work Sock 3-Pack,
+MRG-100263,maya.fortin@example.com,Maya Fortin,Maplecrest Auto,Shipped,UPS,UP5797889912CA,2026-11-20,2026-11-24,289.99,PowerCell Platinum AGM Battery Group H6,
+MRG-100264,daniel.walker@example.com,Daniel Walker,Boreal Sport,Processing,,,2026-11-20,2026-11-28,159.99,Stride 4 Women's Running Shoe,
