@@ -83,4 +83,4 @@ Agentforce (Agent Builder, topics, actions, Testing Center), Agentforce Data Lib
 
 ## About
 
-Built by Leo Herrera.
+Built by Leo Herrera ([@leo-herrera-27](https://github.com/leo-herrera-27)).
