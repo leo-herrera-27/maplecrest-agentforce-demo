@@ -69,13 +69,25 @@ Results and the fixes made between runs are in [`docs/test-results.md`](docs/tes
 
 How I'd take this from demo to production across three brands, with phases, go/no-go criteria, risks and rollback: [`docs/rollout-plan.md`](docs/rollout-plan.md).
 
+## Running the POC
+
+How I'd run this as a customer POC, shown with the three forms I use, filled in with synthetic data for this demo: [`docs/poc-record-example.pdf`](docs/poc-record-example.pdf).
+
+| Form | What it shows |
+|---|---|
+| POC Kickoff | Business goals, stakeholders with committed hours, use cases scored and chosen, success criteria with baselines, timeline, kickoff conditions |
+| Weekly Checkup (week 5) | Milestones against forecast, success criteria progress, test results by agent version, roadblocks, resource gaps, early warning check |
+| Change Request (CR-003) | One fix from feedback to verified change, plus the change log. CR-001 to CR-005 are the real fixes from the Testing Center runs above |
+
+People, dates and business figures in the record are fictional. The test results and fixes are real.
+
 ## Repository contents
 
 | Path | What's there |
 |---|---|
 | `data/` | Sample orders, catalog and policy PDFs, test cases, product list |
 | `force-app/` | Agent, topics, Flows and the Retail Order object, exported from the org |
-| `docs/` | Rollout plan and test results |
+| `docs/` | Rollout plan, test results and the POC record |
 
 ## Built with
 
