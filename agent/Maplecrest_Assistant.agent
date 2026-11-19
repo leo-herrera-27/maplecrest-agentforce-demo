@@ -158,7 +158,7 @@ subagent Product_Finder:
                 with clientName = ...
                 with clientTraceId = ...
             Back_to_Router: @utils.transition to @topic.agent_router
-                description: "Use when the customer asks about something outside this subagent's job, such as an order, a return or policy, or a request to talk to a person."
+                description: "Use when the customer asks about something other than choosing products, such as an order, a policy, or talking to a person."
     actions:
         Maplecrest_Knowledge_Search:
             label: "Maplecrest Knowledge Search"
@@ -217,15 +217,15 @@ subagent Order_Status:
              5. If it's Ready for Pickup, tell the customer it's ready at the store.
              6. If it's Cancelled, explain that and offer to connect them with a specialist.
         actions:
+            Return_to_Router: @utils.transition to @topic.agent_router
+                description: "Use when the customer asks about something other than an existing order, such as a product, a policy, or talking to a person."
             Get_Order_Status: @actions.Get_Order_Status
                 with customerEmail = ...
                 with orderNumber = ...
-            Back_to_Router: @utils.transition to @topic.agent_router
-                description: "Use when the customer asks about something outside this subagent's job, such as an order, a return or policy, or a request to talk to a person."
     actions:
         Get_Order_Status:
             label: "Get Order Status"
-            description: "Looks up an existing order. Requires both the order number and the customer’s email. Returns orderFound = false if they don’t match."
+            description: "Looks up an existing order. Requires both the order number and the customer's email. Returns orderFound = false if they don't match."
             target: "flow://Get_Order_Status"
             inputs:
                 customerEmail: string
@@ -262,6 +262,11 @@ subagent Order_Status:
                     description: "The order’s current status."
                     is_displayable: False
                     filter_from_agent: False
+                statusNote: string
+                    label: "statusNote"
+                    description: "The reason for a delay or cancellation."
+                    is_displayable: False
+                    filter_from_agent: False
                 trackingNumber: string
                     label: "trackingNumber"
                     description: "The tracking number."
@@ -273,14 +278,11 @@ subagent Returns_and_Policies:
     description: "Answers questions about store policies: returns, exchanges, shipping costs and delivery times, price matching, warranties, installation services and customer care hours."
     reasoning:
         instructions: ->
-            |
-             1. Your job is only to explain Maplecrest policies. You can't approve exceptions or process returns.
-             2. If the brand isn't clear from the question, ask which brand the item is from.
-             3. Don't promise exceptions. If the customer disputes a policy or the item is damaged, offer to connect them with a specialist.
-             1. Always use the Maplecrest_Knowledge Retriever Action to answer. Policies differ by brand, so say which brand's policy applies.
-             2. If the brand isn't clear from the question, ask which brand the item is from.
-             3. Don't promise exceptions. If the customer disputes a policy or the item is damaged, offer to connect them with a specialist.
-             4. If the customer asks about anything other than store policies, use the transition action to return to the Agent Router.
+            |1. Your job is only to explain Maplecrest policies. You can't approve exceptions or process returns.
+             2. Always use the Maplecrest_Knowledge Retriever Action to answer. Policies differ by brand, so say which brand's policy applies.
+             3. If the brand isn't clear from the question, ask which brand the item is from.
+             4. Don't promise exceptions. If the customer disputes a policy or the item is damaged, offer to connect them with a specialist.
+             5. If the customer asks about anything other than store policies, use the transition action to return to the Agent Router.
         actions:
             Maplecrest_Knowledge_RetrieverAction: @actions.Maplecrest_Knowledge_RetrieverAction
                 with searchText = ...
@@ -291,7 +293,7 @@ subagent Returns_and_Policies:
                 with clientName = ...
                 with clientTraceId = ...
             Back_to_Router: @utils.transition to @topic.agent_router
-                description: "Use when the customer asks about something outside this subagent's job, such as an order, a return or policy, or a request to talk to a person."
+                description: "Use when the customer asks about something other than store policies, such as a product, an order, or talking to a person."
     actions:
         Maplecrest_Knowledge_RetrieverAction:
             description: |

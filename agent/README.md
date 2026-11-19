@@ -18,7 +18,7 @@
 
 Routing depends on the subagent `description` fields: the router reads them to decide where a message goes. Most of the fixes in [`../docs/test-results.md`](../docs/test-results.md) are edits to those descriptions, made on both sides of each boundary (for example, Product Finder now says it is "not for shipping, returns or store policies", and Off Topic says product comparisons are not off-topic).
 
-Each knowledge subagent and Order Status has a `Back_to_Router` transition, so a customer can change subject mid-conversation without getting stuck.
+Product Finder, Order Status and Returns and Policies each have a transition back to the Agent Router (`Back_to_Router`, or `Return_to_Router` in Order Status), and each transition's description says when to use it. That lets a customer change subject mid-conversation without getting stuck.
 
 ## The two Flows
 
