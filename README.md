@@ -86,7 +86,7 @@ People, dates and business figures in the record are fictional. The test results
 | Path | What's there |
 |---|---|
 | `data/` | Sample orders, catalog and policy PDFs, test cases, product list |
-| `force-app/` | Agent, topics, Flows and the Retail Order object, exported from the org |
+| `agent/` | The full agent definition in Agent Script, exported from Agentforce Builder, and the Flow specs |
 | `docs/` | Rollout plan, test results and the POC record |
 
 ## Built with
