@@ -12,8 +12,11 @@ Scorers: subagent routing and action selection (deterministic), response match, 
 | 2 (after fixes) | 2026-11-19 | Version 2 | 18/20 | 19/20 | 19/20 | 17/20 | 14 high, 6 uncertain | 16.8 s |
 | 3 (Off Topic boundary) | 2026-11-19 | Version 3 | 19/20 | 19/20 | 19/20 | 17/20 | 13 high, 7 uncertain | 19.5 s |
 | 4 (regression fix) | 2026-11-19 | Version 4 | 20/20 | 20/20 | 20/20 | 18/20 | 19 high, 1 uncertain | 17.0 s |
+| 5 (cleanup, second run at target) | 2026-11-19 | Version 6 | 20/20 | 20/20 | 20/20 | 18/20 | 15 high, 5 uncertain | 15.6 s |
 
-Cases passing routing, action and response together: 16/20 at baseline, 18/20 in run 2, 19/20 in run 3, 20/20 in run 4.
+Cases passing routing, action and response together: 16/20 at baseline, 18/20 in run 2, 19/20 in run 3, 20/20 in run 4 and 20/20 again in run 5.
+
+Run 5 tested Version 6, a cleanup version with no intended behavior change: the Get Order Status action was rebuilt from the Flow so its definition lists the `statusNote` output, duplicated lines were removed from the Returns and Policies instructions, and each transition back to the router got its own description. Every case still passed, so the cleanup caused no regressions and the agent met the target on two runs in a row.
 
 The two remaining Completeness failures are LLM-judge calls, reviewed by reading the transcripts: "Where is my order?" correctly asks for the order number and email (the judge expected an order status), and the discount request is redirected without an explicit "I can't provide discount codes" (correct behavior, wording could be clearer).
 
