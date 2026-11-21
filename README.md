@@ -4,6 +4,14 @@ A working Agentforce agent for a fictional multi-brand retailer, built to show h
 
 > **All company names, products, customers and orders in this project are fictional.** Maplecrest Retail Group, Maplecrest Auto, Boreal Sport and Ironpine Workwear do not exist. No real customer data is used.
 
+## At a glance
+
+- **Tested:** 20/20 on routing, action selection and response in Agentforce Testing Center, on two consecutive runs (Version 4 and Version 6). Five runs in total, starting at 16/20. See [test results](docs/test-results.md).
+- **The agent as code:** the full definition in Agent Script, plus the two Flow specs, in [`agent/`](agent/).
+- **Demo to production:** what stays the same and what changes for a real customer, in [`docs/production-architecture.png`](docs/production-architecture.png).
+- **How I'd run the POC:** kickoff, weekly checkup and change request forms, filled in for this demo, in [`docs/poc-record-example.pdf`](docs/poc-record-example.pdf).
+- **How it was built:** in a Salesforce Developer Edition org, with Claude as an AI pair for guidance, test cases and documentation. I made the design decisions, ran the tests and decided every fix.
+
 ## The business problem
 
 Maplecrest Retail Group runs three brands with different catalogs and policies:
@@ -92,6 +100,7 @@ People, dates and business figures in the record are fictional. The test results
 |---|---|
 | `data/` | Sample orders, catalog and policy PDFs, test cases, product list |
 | `agent/` | The full agent definition in Agent Script, exported from Agentforce Builder, and the Flow specs |
+| `sfdx-project.json` | Salesforce DX project file. In a full project, the agent, Flows, object and permission set would be retrieved as metadata into `force-app/`; this demo keeps the exported Agent Script in `agent/` instead |
 | `docs/` | Rollout plan, test results and the POC record |
 
 ## Built with
