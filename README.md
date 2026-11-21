@@ -22,9 +22,9 @@ Customer care handles the same questions every day: *Which tire fits my car? Whe
 
 | Topic | What it handles | How it works |
 |---|---|---|
-| Product Finder | Product advice, sizing, specs, prices | Retrieval (RAG) over brand catalogs and buying guides in an Agentforce Data Library |
+| Product Finder | Product advice, sizing, specs, prices | Retriever action over brand catalogs and buying guides in an Agentforce Data Library |
 | Order Status | Status, tracking, delivery date, pickup | Flow action that matches on order number **and** email |
-| Returns & Policies | Returns, shipping, price match, services | Retrieval over the policy document, answered per brand |
+| Returns & Policies | Returns, shipping, price match, services | Retriever action over the policy document, answered per brand |
 | Escalate to a Human | Damaged items, complaints, privacy requests | Flow action that creates a Case with an AI-written summary |
 
 ## Architecture
@@ -36,17 +36,18 @@ flowchart LR
     A --> T2[Order Status]
     A --> T3[Returns & Policies]
     A --> T4[Escalate to a Human]
-    T1 --> K[Answer Questions<br/>with Knowledge]
-    T3 --> K
-    K --> DL[Agentforce Data Library]
-    DL --> D360[(Data 360<br/>search index + retriever)]
-    D360 --> DOCS[Catalog and policy PDFs]
+    T1 --> K1[Retriever action:<br/>Maplecrest Knowledge Search]
+    T3 --> K2[Retriever action:<br/>Maplecrest Knowledge Retriever]
+    K1 --> DL[(Agentforce Data Library<br/>catalog, buying guides, policies)]
+    K2 --> DL
     T2 --> F1[Flow: Get_Order_Status]
-    F1 --> O[(Retail Order object)]
+    F1 --> O[(Retail Order object<br/>synthetic demo data)]
     T4 --> F2[Flow: Create_Support_Case]
     F2 --> CS[(Case)]
-    F1 -. in production .-> MS[MuleSoft / API<br/>order management system]
+    F1 -. production only, not in this demo .-> MS[Order management system<br/>via Named Credential or MuleSoft]
 ```
+
+Everything with a solid line runs in the demo org today. The dotted line is the production path: the order lookup would call the customer's order system instead of the demo object, with the same inputs and outputs, so the agent doesn't change. See [`docs/production-architecture.png`](docs/production-architecture.png).
 
 All model calls run through the Einstein Trust Layer.
 
