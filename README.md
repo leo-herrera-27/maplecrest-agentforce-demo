@@ -69,6 +69,10 @@ Results and the fixes made between runs are in [`docs/test-results.md`](docs/tes
 
 How I'd take this from demo to production across three brands, with phases, go/no-go criteria, risks and rollback: [`docs/rollout-plan.md`](docs/rollout-plan.md).
 
+## From demo to production
+
+[`docs/production-architecture.png`](docs/production-architecture.png) shows what changes for a real customer: the agent stays the same, while knowledge moves to Data Cloud, the order lookup calls the order management system through a Named Credential or MuleSoft, and hand-offs route through Omni-Channel. Releases go through Git and the Testing Center suite.
+
 ## Running the POC
 
 How I'd run this as a customer POC, shown with the three forms I use, filled in with synthetic data for this demo: [`docs/poc-record-example.pdf`](docs/poc-record-example.pdf).
